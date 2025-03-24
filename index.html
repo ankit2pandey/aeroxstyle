@@ -126,19 +126,43 @@
   @-o-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
   @keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
 }
+.color-button {
+    
+            background-color: #007BFF;
+            color: #fff;
+            transition: background-color 0.3s ease;
+            
+        }
 </style>
+<script>
+    document.addEventListener('mousemove', (event) => {
+            const button = document.getElementById('colorButton');
+            const mouseX = event.clientX; // Get mouse X position
+            const mouseY = event.clientY; // Get mouse Y position
+
+            // Update button's position to follow the mouse
+            
+
+            // Change color based on mouse position
+            const red = Math.min(255, Math.floor(mouseX / window.innerWidth * 255));
+            const green = Math.min(255, Math.floor(mouseY / window.innerHeight * 255));
+            const blue = Math.min(255, Math.floor((mouseX + mouseY) / (window.innerWidth + window.innerHeight) * 255));
+
+            button.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        });
+</script>
 </head>
 <body>
 
   
-  <section data-bs-version="5.1" class="menu menu01 trackm5 cid-uGg8g3lKVZ" once="menu" id="menu-1-uGg8g3lKVZ">
+  <section data-bs-version="5.1" class="menu menu01 trackm5 cid-uGg8g3lKVZ color-button" id="colorButton" once="menu" id="menu-1-uGg8g3lKVZ">
 
     
 
-    <nav class="navbar navbar-dropdown navbar-expand-lg">
+    <nav class="navbar navbar-dropdown navbar-expand-lg ">
         <div class="menu_box container-fluid">
             <div class="navbar-brand d-flex">
-                <span class="navbar-logo">
+                <span class="navbar-logo ">
                     <a href="#">
                         <img src="images/WhatsApp_Image_2025-03-23_at_16.37.49_c5952935-removebg-preview.png" alt="">
                     </a>

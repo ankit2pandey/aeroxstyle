@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Movement Button Color Change</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+        .color-button {
+            
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <button class="color-button" id="colorButton">Mouse Tracker</button>
+    
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            const button = document.getElementById('colorButton');
+            const mouseX = event.clientX; // Get mouse X position
+            const mouseY = event.clientY; // Get mouse Y position
+
+            // Update button's position to follow the mouse
+            button.style.left = `${mouseX}px`;
+            button.style.top = `${mouseY}px`;
+
+            // Change color based on mouse position
+            const red = Math.min(255, Math.floor(mouseX / window.innerWidth * 255));
+            const green = Math.min(255, Math.floor(mouseY / window.innerHeight * 255));
+            const blue = Math.min(255, Math.floor((mouseX + mouseY) / (window.innerWidth + window.innerHeight) * 255));
+
+            button.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        });
+    </script>
+</body>
+</html>
