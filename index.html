@@ -144,9 +144,9 @@
             
 
             // Change color based on mouse position
-            const red = Math.min(255, Math.floor(mouseX / window.innerWidth * 255));
+            const blue = Math.min(255, Math.floor(mouseX / window.innerWidth * 255));
             const green = Math.min(255, Math.floor(mouseY / window.innerHeight * 255));
-            const blue = Math.min(255, Math.floor((mouseX + mouseY) / (window.innerWidth + window.innerHeight) * 255));
+            const  red= Math.min(255, Math.floor((mouseX + mouseY) / (window.innerWidth + window.innerHeight) * 255));
 
             button.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         });
