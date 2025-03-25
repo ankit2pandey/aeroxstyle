@@ -1,0 +1,112 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: gold;
+}
+
+.menu-toggle {
+    font-size: 28px;
+    display: none;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?office,work') center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact-btn {
+    background: gold;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/* Footer Section */
+.footer-section {
+    background: #f5e1a4;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        background: black;
+        padding: 10px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
